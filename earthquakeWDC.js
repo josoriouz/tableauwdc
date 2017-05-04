@@ -20,26 +20,6 @@
   };
 
   myConnector.getData = function (table, doneCallback) {
-    // fetch('http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson')
-    // .then((resp) => resp.json())
-    // .then(function(data) {
-    //   var features = data.features;
-    //   var tableData = [];
-    //
-    //   features.map(feature => {
-    //     tableData.push({
-    //       "id": feature.id,
-    //       "mag": feature.properties.mag,
-    //       "title": feature.properties.title,
-    //       "url": feature.properties.url,
-    //       "lon": feature.geometry.coordinates[0],
-    //       "lat": feature.geometry.coordinates[1]
-    //     })
-    //   });
-    //
-    //   table.appendRows(tableData);
-    //   doneCallback();
-    // });
     $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
         var feat = resp.features,
             tableData = [];
